@@ -1,0 +1,18 @@
+apiVersion: run.tanzu.vmware.com/v1alpha1
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-by-argo-demo
+  namespace: dev                
+spec:
+  distribution:
+    version: v1.16
+  topology:
+    controlPlane:
+      count: 1
+      class: best-effort-small
+      storageClass: pacific-gold-storage-policy
+    workers:
+      count: 3
+      class: best-effort-small
+      storageClass: pacific-gold-storage-policy
+      
